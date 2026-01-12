@@ -5,12 +5,22 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const Datatable = () => {
-  const [data, setData] = useState(userRows);
+  // ✅ READ: initialize state directly from localStorage (NO useEffect)
+  const [data, setData] = useState(() => {
+    const storedUsers = JSON.parse(localStorage.getItem("users"));
+    return storedUsers && storedUsers.length > 0
+      ? storedUsers
+      : userRows;
+  });
 
+  // ✅ DELETE: update state + localStorage
   const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
+    const updatedData = data.filter((item) => item.id !== id);
+    setData(updatedData);
+    localStorage.setItem("users", JSON.stringify(updatedData));
   };
 
+  // Action column
   const actionColumn = [
     {
       field: "action",
@@ -19,9 +29,13 @@ const Datatable = () => {
       renderCell: (params) => {
         return (
           <div className="cellAction">
-            <Link to="/users/test" style={{ textDecoration: "none" }}>
+            <Link
+              to={`/users/${params.row.id}`}
+              style={{ textDecoration: "none" }}
+            >
               <div className="viewButton">View</div>
             </Link>
+
             <div
               className="deleteButton"
               onClick={() => handleDelete(params.row.id)}
@@ -33,6 +47,7 @@ const Datatable = () => {
       },
     },
   ];
+
   return (
     <div className="datatable">
       <div className="datatableTitle">
@@ -41,6 +56,7 @@ const Datatable = () => {
           Add New
         </Link>
       </div>
+
       <DataGrid
         className="datagrid"
         rows={data}
@@ -48,6 +64,7 @@ const Datatable = () => {
         pageSize={9}
         rowsPerPageOptions={[9]}
         checkboxSelection
+        disableSelectionOnClick
       />
     </div>
   );
