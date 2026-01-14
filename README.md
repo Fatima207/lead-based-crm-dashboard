@@ -52,3 +52,4 @@ Handling CRUD operations effectively
 Managing component state and props
 Writing clean and maintainable code
 Structuring a scalable React project
+  <img width="1918" height="917" alt="image" src="https://github.com/user-attachments/assets/adf0e293-2645-41d7-80f1-2c56b43b1cf7" />
