@@ -1,16 +1,54 @@
-# React + Vite
+CRM Management System (React Based)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📌 Project Overview
+This is a Customer Relationship Management (CRM) system built using React.js.
+The application helps manage customers/leads, track their details, update status, and perform complete CRUD operations in a clean and user-friendly interface.
+The main goal of this project is to demonstrate real-world React concepts, proper component structure, state management, and frontend best practices.
 
-Currently, two official plugins are available:
+🎯 Key Objectives
+Manage customer/lead data efficiently
+Perform Create, Read, Update, and Delete (CRUD) operations
+Build a scalable and reusable React component structure
+Improve understanding of React hooks and state handling
+Create an interview-ready frontend project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 Features
+➕ Add new customers/leads
+📄 View all customer details in a table
+✏️ Edit existing customer information
+🗑️ Delete customers/leads
+🔍 Search & filter customers
+📊 Status tracking (New, In Progress, Converted, Lost, etc.)
+🧩 Reusable components
+📱 Responsive UI
 
-## React Compiler
+Tech Stack
+Frontend: React.js
+Styling: CSS / Tailwind CSS (if used)
+State Management: React Hooks (useState, useEffect)
+Routing: React Router DOM
+Build Tool: Vite / Create React App
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🧠 React Concepts Used
+Functional Components
+useState – to manage form and table data
+useEffect – to handle lifecycle logic
+Props – for data communication between components
+Conditional Rendering
+Controlled Forms
+Component Reusability
 
-## Expanding the ESLint configuration
+Future Enhancements
+Backend integration (Node.js / Java / PHP)
+Authentication (Login / Signup)
+Role-based access (Admin, User)
+Pagination & sorting
+API integration
+Database support
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+💡 What I Learned
+Building real-world React applications
+Handling CRUD operations effectively
+Managing component state and props
+Writing clean and maintainable code
+Structuring a scalable React project
