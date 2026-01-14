@@ -12,7 +12,7 @@ import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSyst
 import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { Link } from "react-router-dom";
-import { DarkModeContext } from "../../context/darkModeContext";
+import { DarkModeContext } from "../../context/DarkModeContext";
 import { useContext } from "react";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
@@ -132,13 +132,13 @@ const Sidebar = () => {
       </div> */}
       {/* THE THEME BUTTONS */}
       <div className="bottom">
-        <div 
-          className="colorOption" 
+        <div
+          className="colorOption"
           onClick={() => dispatch({ type: "LIGHT" })}
           title="Light Mode"
         ></div>
-        <div 
-          className="colorOption" 
+        <div
+          className="colorOption"
           onClick={() => dispatch({ type: "DARK" })}
           title="Dark Mode"
         ></div>

@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import { DarkModeContextProvider } from "./context/darkModeContext";
+import { DarkModeContextProvider } from "./context/DarkModeContext";
 createRoot(document.getElementById("root")).render(
   // <StrictMode>
   <DarkModeContextProvider>

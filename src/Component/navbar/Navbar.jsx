@@ -7,7 +7,7 @@ import FullscreenExitOutlinedIcon from "@mui/icons-material/FullscreenExitOutlin
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
-import { DarkModeContext } from "../../context/darkModeContext";
+import { DarkModeContext } from "../../context/DarkModeContext";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState(null);
@@ -36,7 +36,7 @@ const Navbar = () => {
           <input type="text" placeholder="Search..." />
           <SearchOutlinedIcon />
         </div>
-        
+
         <div className="items">
           {/* 1. LANGUAGE SELECTOR */}
           <div className="item" onClick={() => handleToggle("lang")}>
@@ -52,16 +52,22 @@ const Navbar = () => {
           </div>
 
           {/* 2. Update the Moon Item */}
-         <div className="item" onClick={() => dispatch({ type: "TOGGLE" })}>
-  {darkMode ? (
-    <WbSunnyOutlinedIcon className="icon" style={{ color: "orange" }} />
-  ) : (
-    <DarkModeOutlinedIcon className="icon" />
-  )}
-</div>
+          <div className="item" onClick={() => dispatch({ type: "TOGGLE" })}>
+            {darkMode ? (
+              <WbSunnyOutlinedIcon
+                className="icon"
+                style={{ color: "orange" }}
+              />
+            ) : (
+              <DarkModeOutlinedIcon className="icon" />
+            )}
+          </div>
 
           {/* 3. FULLSCREEN */}
-          <div className="item" onClick={() => document.documentElement.requestFullscreen()}>
+          <div
+            className="item"
+            onClick={() => document.documentElement.requestFullscreen()}
+          >
             <FullscreenExitOutlinedIcon className="icon" />
           </div>
 
@@ -72,8 +78,12 @@ const Navbar = () => {
             {activeMenu === "notify" && (
               <div className="dropdown listContainer">
                 <div className="header">Notifications</div>
-                <div className="dropdownItem"><b>New Order</b> - SK2540 placed</div>
-                <div className="dropdownItem"><b>System</b> - Memory usage high</div>
+                <div className="dropdownItem">
+                  <b>New Order</b> - SK2540 placed
+                </div>
+                <div className="dropdownItem">
+                  <b>System</b> - Memory usage high
+                </div>
                 <div className="footer">View All</div>
               </div>
             )}
@@ -87,10 +97,14 @@ const Navbar = () => {
               <div className="dropdown listContainer">
                 <div className="header">Messages</div>
                 <div className="dropdownItem">
-                   <p><b>Neal Matthews:</b> Where is my order?</p>
+                  <p>
+                    <b>Neal Matthews:</b> Where is my order?
+                  </p>
                 </div>
                 <div className="dropdownItem">
-                   <p><b>Jamal Burns:</b> Payment sent.</p>
+                  <p>
+                    <b>Jamal Burns:</b> Payment sent.
+                  </p>
                 </div>
                 <div className="footer">Clear All</div>
               </div>
@@ -101,20 +115,20 @@ const Navbar = () => {
             <ListOutlinedIcon className="icon" />
           </div>
 
-  <div className="item" onClick={() => handleToggle("profile")}>
-  <img
-    src="https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-    alt="user avatar"
-    className="avatar" // Make sure this class is exactly "avatar"
-  />
-  {activeMenu === "profile" && (
-    <div className="dropdown">
-       <div className="header">My Account</div>
-       <div className="dropdownItem">Profile</div>
-       <div className="dropdownItem">Logout</div>
-    </div>
-  )}
-</div>
+          <div className="item" onClick={() => handleToggle("profile")}>
+            <img
+              src="https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              alt="user avatar"
+              className="avatar" // Make sure this class is exactly "avatar"
+            />
+            {activeMenu === "profile" && (
+              <div className="dropdown">
+                <div className="header">My Account</div>
+                <div className="dropdownItem">Profile</div>
+                <div className="dropdownItem">Logout</div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

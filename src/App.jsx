@@ -20,7 +20,7 @@ import "./style/dark.scss";
 
 // 1. IMPORT THESE TWO
 import { useContext } from "react";
-import { DarkModeContext } from "./context/darkModeContext";
+import { DarkModeContext } from "./context/DarkModeContext";
 
 function App() {
   // 2. GET THE DARKMODE STATE
