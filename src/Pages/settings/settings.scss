@@ -1,0 +1,9 @@
+.settings {
+  display: flex;
+  background-color: #f4f6fb;
+  min-height: 100vh;
+
+  .settingsContainer {
+    flex: 6;
+  }
+}

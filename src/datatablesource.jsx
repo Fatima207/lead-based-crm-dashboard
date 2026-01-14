@@ -1,83 +1,105 @@
+// ================= USERS =================
 export const userColumns = [
-  { field: "id", headerName: "ID", width: 70 },
-  {
-    field: "user",
-    headerName: "User",
-    width: 230,
-    renderCell: (params) => {
-      return (
-        <div className="cellWithImg">
-          <img className="cellImg" src={params.row.img} alt="avatar" />
-          {params.row.username}
-        </div>
-      );
-    },
-  },
-  {
-    field: "email",
-    headerName: "Email",
-    width: 230,
-  },
+  { field: "id", headerName: "ID", width: 90 },
 
+  { field: "username", headerName: "User", width: 130 },
+
+  { field: "email", headerName: "Email", width: 180 },
+
+  { field: "age", headerName: "Age", width: 70 },
+
+  { field: "phone", headerName: "Phone", width: 120 },
+
+  { field: "role", headerName: "Role", width: 100 },
+
+  { field: "status", headerName: "Status", width: 90 },
+];
+
+export const userRows = [
   {
-    field: "age",
-    headerName: "Age",
-    width: 100,
+    id: "U1001",
+    username: "Munfees",
+    email: "m@gmail.com",
+    age: 21,
+    phone: "9163945988",
+    role: "Frontend Developer",
+    status: "Active",
+  },
+];
+// ================= ORDERS =================
+export const orderColumns = [
+  { field: "id", headerName: "Order ID", width: 110 },
+  { field: "billingName", headerName: "Billing Name", width: 160 },
+  { field: "orderDate", headerName: "Date", width: 120 },
+  { field: "total", headerName: "Total ($)", width: 100 },
+  { field: "paymentMethod", headerName: "Payment", width: 130 },
+  { field: "status", headerName: "Status", width: 110 },
+];
+
+export const orderRows = [
+  {
+    id: "SK2540",
+    billingName: "Neal Matthews",
+    orderDate: "07 Oct 2019",
+    total: 400,
+    paymentMethod: "Mastercard",
+    status: "Paid",
   },
   {
-    field: "status",
-    headerName: "Status",
-    width: 160,
-    renderCell: (params) => {
-      return (
-        <div className={`cellWithStatus ${params.row.status}`}>
-          {params.row.status}
-        </div>
-      );
-    },
+    id: "SK2541",
+    billingName: "Jamal Burns",
+    orderDate: "08 Oct 2019",
+    total: 380,
+    paymentMethod: "Visa",
+    status: "Pending",
   },
 ];
 
-//temporary data
-export const userRows = [
+import { Chip } from "@mui/material";
+
+// ================= DELIVERY =================
+export const deliveryColumns = [
+  { field: "id", headerName: "Delivery ID", width: 110 },
+
+  { field: "customer", headerName: "Customer", width: 150 },
+
+  { field: "address", headerName: "Address", width: 180 },
+
+  { field: "date", headerName: "Date", width: 120 },
+
   {
-    id: 1,
-    username: "Snow",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    status: "active",
-    email: "1snow@gmail.com",
-    age: 35,
+    field: "status",
+    headerName: "Status",
+    width: 120,
+    renderCell: (params) => (
+      <Chip
+        label={params.value}
+        size="small"
+        color={
+          params.value === "Delivered"
+            ? "success"
+            : params.value === "Pending"
+            ? "warning"
+            : "info"
+        }
+      />
+    ),
+  },
+];
+
+export const deliveryRows = [
+  {
+    id: "DL1001",
+    customer: "John Doe",
+    address: "New York",
+    date: "10 Feb 2024",
+    status: "Delivered",
   },
   {
-    id: 2,
-    username: "Jamie Lannister",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "2snow@gmail.com",
-    status: "passive",
-    age: 42,
-  },
-  {
-    id: 3,
-    username: "Lannister",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "3snow@gmail.com",
-    status: "pending",
-    age: 45,
-  },
-  {
-    id: 4,
-    username: "Stark",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "4snow@gmail.com",
-    status: "active",
-    age: 16,
-  },
-  {
-    id: 5,
-    username: "Targaryen",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    email: "5snow@gmail.com",
-    status: "passive",
-    age: 22,
+    id: "DL1002",
+    customer: "Sara Smith",
+    address: "California",
+    date: "12 Feb 2024",
+    status: "Pending",
   },
 ];

@@ -1,0 +1,51 @@
+.profile {
+  display: flex;
+  background: #f4f6fb;
+}
+
+.profileContainer {
+  flex: 6;
+}
+
+.profileBox {
+  padding: 30px;
+}
+
+.profileCard {
+  max-width: 700px;
+  margin: auto;
+  border-radius: 14px;
+}
+
+.avatarBox {
+  text-align: center;
+}
+
+.avatar {
+  width: 100px !important;
+  height: 100px !important;
+  margin: auto;
+}
+
+.role {
+  color: gray;
+  font-size: 14px;
+}
+
+.label {
+  font-size: 13px;
+  color: gray;
+}
+
+.value {
+  font-weight: 500;
+}
+
+.active {
+  color: green;
+}
+
+.btnBox {
+  margin-top: 30px;
+  text-align: center;
+}

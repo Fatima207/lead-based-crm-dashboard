@@ -1,77 +1,115 @@
 .new {
-  width: 100%;
+  min-height: 100vh;
+  background-color: #f8f9fa;
   display: flex;
 
   .newContainer {
     flex: 6;
 
-    .top,
-    .bottom {
-      -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
-      box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
-      padding: 10px;
-      margin: 20px;
-      display: flex;
+    .formWrapper {
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 0 20px;
+      animation: fadeIn 0.6s ease-out;
+    }
 
-      h1 {
-        color: lightgray;
-        font-size: 20px;
+    .pageTitle {
+      font-size: 32px;
+      font-weight: 800;
+      text-align: center;
+      color: #344767;
+      margin-bottom: 8px;
+    }
+
+    .pageSubtitle {
+      text-align: center;
+      color: #67748e;
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+    }
+
+    .formCard {
+      border: none;
+      border-radius: 16px;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      overflow: visible; // Allows avatar to float
+    }
+
+    .avatarSection {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-top: -50px;
+
+      .MuiAvatar-root {
+        width: 110px;
+        height: 110px;
+        border: 4px solid #fff;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        background-color: #f1f5f9;
       }
 
-      .left {
-        flex: 1;
-        text-align: center;
+      .uploadBtn {
+        text-transform: none;
+        border-radius: 8px;
+        font-weight: 600;
+        border-color: #1a73e8; // Blue branding
+        color: #1a73e8;
 
-        img {
-          width: 100px;
-          height: 100px;
-          border-radius: 50%;
-          object-fit: cover;
+        &:hover {
+          background-color: rgba(26, 115, 232, 0.04);
+          border-color: #1557b0;
         }
       }
+    }
 
-      .right {
-        flex: 2;
+    .inputField {
+      .MuiOutlinedInput-root {
+        border-radius: 10px;
+        background-color: #fff;
+        
+        & fieldset {
+          border-color: #d2d6da;
+        }
 
-        form {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 30px;
-          justify-content: space-around;
+        &:hover fieldset {
+          border-color: #1a73e8;
+        }
 
-          .formInput {
-            width: 40%;
+        &.Mui-focused fieldset {
+          border-color: #1a73e8;
+          border-width: 2px;
+        }
+      }
+    }
 
-            label {
-              display: flex;
-              align-items: center;
-              gap: 10px;
+    .submitBox {
+      margin-top: 35px;
+      display: flex;
+      justify-content: flex-end; // Aligned to right like "Add Order"
 
-              .icon {
-                cursor: pointer;
-              }
-            }
+      .submitBtn {
+        padding: 10px 40px;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        font-weight: 700;
+        background-color: #1a73e8; // MATCHING BLUE
+        box-shadow: 0 4px 7px -1px rgba(0, 0, 0, 0.11), 0 2px 4px -1px rgba(0, 0, 0, 0.07);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
 
-            input {
-              width: 100%;
-              padding: 5px;
-              border: none;
-              border-bottom: 1px solid gray;
-            }
-          }
-
-          button {
-            width: 150px;
-            padding: 10px;
-            border: none;
-            background-color: teal;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 10px;
-          }
+        &:hover {
+          background-color: #1557b0;
+          transform: translateY(-1px);
         }
       }
     }
   }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }

@@ -1,0 +1,39 @@
+.stats {
+  display: flex;
+  background-color: #f4f6fb;
+  min-height: 100vh;
+
+  .statsContainer {
+    flex: 6;
+  }
+}
+
+.statCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 12px;
+  background: white;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  .statLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .statIcon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

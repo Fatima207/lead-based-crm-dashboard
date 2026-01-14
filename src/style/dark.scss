@@ -1,4 +1,31 @@
 .app.dark {
+  // Fixes the DataGrid (Users/Orders Table)
+  .MuiDataGrid-root {
+    color: #ececec !important;
+    border-color: #333 !important;
+    
+    .MuiDataGrid-columnHeaders {
+      background-color: #333 !important;
+      color: #ececec !important;
+    }
+
+    .MuiDataGrid-cell {
+      border-bottom: 1px solid #333 !important;
+    }
+
+    .MuiTablePagination-root {
+      color: #ececec !important;
+    }
+  }
+
+  // Fixes White Cards
+  .MuiPaper-root {
+    background-color: #222 !important;
+    color: #ececec !important;
+  }
+}
+
+.app.dark {
   background-color: #111;
   color: rgb(156, 156, 156);
 

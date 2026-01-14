@@ -1,0 +1,47 @@
+.notifications {
+  display: flex;
+  background-color: #f4f6fb;
+  min-height: 100vh;
+
+  .notificationsContainer {
+    flex: 6;
+  }
+}
+
+.notificationCard {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 16px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  background: #fff;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: #f9f9f9;
+  }
+
+  &.read {
+    opacity: 0.7;
+  }
+
+  .left {
+    .icon {
+      font-size: 32px;
+      color: #1976d2;
+    }
+  }
+
+  .center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .right {
+    display: flex;
+    gap: 8px;
+  }
+}

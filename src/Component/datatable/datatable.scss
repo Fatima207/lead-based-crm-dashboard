@@ -1,82 +1,104 @@
-.MuiDataGrid-cell {
-  white-space: nowrap !important;
-}
-
-
 .datatable {
-  // height: 600px;
   padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
 
-  .datatableTitle{
-    width: 80%;
+  .datatableTitle {
+    width: 100%;
     font-size: 24px;
-    color: gray;
-    margin-bottom: 10px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    .link{
+    .link {
       text-decoration: none;
-      color: green;
-      font-size: 16px;
-      font-weight: 400;
-      border: 1px solid green;
-      padding: 5px;
-      border-radius: 5px;
+      color: white;
+      background-color: #1a73e8; // Blue branding
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 6px;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      text-transform: uppercase;
+      box-shadow: 0px 4px 10px rgba(26, 115, 232, 0.3);
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: #1557b0;
+      }
     }
   }
+
+  .datagrid {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden; 
+    
+    .MuiDataGrid-columnHeaders {
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .MuiDataGrid-cell {
+      white-space: nowrap !important;
+      display: flex;
+      align-items: center;
+    }
+  }
+
   .cellWithImg {
     display: flex;
     align-items: center;
+    gap: 12px;
 
     .cellImg {
-      width: 32px;
-      height: 32px;
+      width: 35px;
+      height: 35px;
       border-radius: 50%;
       object-fit: cover;
-      margin-right: 20px;
+      border: 1px solid #eee;
     }
   }
-  .cellWithStatus {
-    padding: 5px;
-    border-radius: 5px;
 
-    &.active {
-      background-color: rgba(0, 128, 0, 0.05);
-      color: green;
+  .cellWithStatus {
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: capitalize;
+
+    &.active, &.paid {
+      background-color: rgba(0, 128, 0, 0.1);
+      color: #2e7d32;
     }
     &.pending {
-      background-color: rgba(255, 217, 0, 0.05);
-      color: goldenrod;
+      background-color: rgba(255, 165, 0, 0.1);
+      color: #ed6c02;
     }
     &.passive {
-      background-color: rgba(255, 0, 0, 0.05);
-      color: crimson;
+      background-color: rgba(255, 0, 0, 0.1);
+      color: #d32f2f;
     }
   }
 
   .cellAction {
     display: flex;
     align-items: center;
-    gap: 15px;
-    flex-wrap: nowrap;
+    gap: 5px;
 
-    .viewButton {
-      padding: 2px 5px;
-      border-radius: 5px;
-      color: darkblue;
-      border: 1px dotted rgba(0, 0, 139, 0.596);
+    svg {
       cursor: pointer;
-    }
-
-    .deleteButton {
-      padding: 2px 5px;
-      border-radius: 5px;
-      color: crimson;
-      border: 1px dotted rgba(220, 20, 60, 0.6);
-      cursor: pointer;
+      padding: 4px;
+      border-radius: 4px;
+      &:hover {
+        background-color: #f0f0f0;
+      }
     }
   }
 }

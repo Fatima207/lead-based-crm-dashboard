@@ -1,14 +1,34 @@
+.app.dark {
+  background-color: #111 !important;
+  color: #ececec !important;
+
+  .navbar {
+    background-color: #222;
+    border-bottom: 1px solid #333;
+    .icon { color: #ececec; }
+  }
+
+  .sidebar {
+    background-color: #222;
+    border-right: 1px solid #333;
+    .logo { color: #7451f1; }
+  }
+}
+
 .navbar {
-  height: 50px;
-  border-bottom: 0.5px solid rgb(231, 228, 228);
+  height: 60px;
+  border-bottom: 0.5px solid #f0f0f0;
   display: flex;
   align-items: center;
-  font-size: 14px;
-  color: #555;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 
   .wrapper {
     width: 100%;
-    padding: 20px;
+    height: 100%; // Ensure wrapper doesn't grow
+    padding: 0 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -16,56 +36,101 @@
     .search {
       display: flex;
       align-items: center;
-      border: 0.5px solid lightgray;
-      padding: 3px;
+      border: 0.5px solid #e0e0e0;
+      padding: 6px 12px;
+      border-radius: 8px;
 
       input {
         border: none;
         outline: none;
         background: transparent;
-
-        &::placeholder {
-          font-size: 12px;
-        }
       }
     }
 
     .items {
       display: flex;
       align-items: center;
+      gap: 10px;
+      height: 100%;
 
       .item {
         display: flex;
         align-items: center;
-        margin-right: 20px;
+        justify-content: center;
         position: relative;
-
-        .icon {
-          font-size: 20px;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 8px;
+        transition: 0.2s;
+        
+        // --- THE AVATAR FORCE FIX ---
+        .avatar {
+          width: 35px !important;  // Fixed Width
+          height: 35px !important; // Fixed Height
+          min-width: 35px;         // Prevents shrinking
+          min-height: 35px;        // Prevents shrinking
+          border-radius: 50% !important; // Forces circle
+          object-fit: cover;       // Crops image properly
+          display: block;
+          border: 1px solid #ddd;
         }
 
-        .avatar {
-          width: 30px;
-          height: 30px;
-          border-radius: 50%;
+        .icon {
+          font-size: 22px;
+          color: #555;
         }
 
         .counter {
-          width: 15px;
-          height: 15px;
-          background-color: red;
+          width: 16px;
+          height: 16px;
+          background-color: #ff4d4f;
           border-radius: 50%;
           color: white;
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 10px;
-          font-weight: bold;
           position: absolute;
-          top: -5px;
-          right: -5px;
+          top: 0;
+          right: 0;
+          font-weight: bold;
+          border: 2px solid white;
+        }
+
+        /* DROPDOWN BOX */
+        .dropdown {
+          position: absolute;
+          top: 50px;
+          right: 0;
+          width: 240px;
+          background-color: white;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+          border-radius: 12px;
+          border: 1px solid #f0f0f0;
+          z-index: 1000;
+          overflow: hidden;
+          animation: slideUp 0.2s ease;
+
+          .header {
+            padding: 12px;
+            font-weight: 700;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #eee;
+          }
+
+          .dropdownItem {
+            padding: 12px;
+            font-size: 13px;
+            color: #555;
+            &:hover { background-color: #f0f2ff; }
+          }
         }
       }
     }
   }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }

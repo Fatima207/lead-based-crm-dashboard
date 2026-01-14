@@ -1,0 +1,39 @@
+.systemHealth {
+  display: flex;
+  background-color: #f4f6fb;
+  min-height: 100vh;
+
+  .systemHealthContainer {
+    flex: 6;
+  }
+}
+
+.healthCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 12px;
+  background: #fff;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
