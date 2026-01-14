@@ -14,9 +14,9 @@ const Datatable = () => {
 
   // Default rows to ensure the UI looks attractive on first load
   const INITIAL_ROWS = [
-    { id: "1768325", user: "Neal Matthews", email: "neal@example.com", age: 32, phone: "+1 234 567", status: "Active", img: "https://images.pexels.com/photos/1840608/pexels-photo-1840608.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { id: "1768326", user: "Jamal Burns", email: "jamal@example.com", age: 28, phone: "+1 987 654", status: "Active", img: "https://images.pexels.com/photos/2269872/pexels-photo-2269872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
-    { id: "1768327", user: "Sarah Jenkins", email: "sarah@example.com", age: 25, phone: "+1 444 222", status: "Pending", img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+    { id: "1768325", username: "Neal Matthews", email: "neal@example.com", age: 32, phone: "+1 234 567", status: "Active", role: "FullStack", img: "https://images.pexels.com/photos/1840608/pexels-photo-1840608.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+    { id: "1768326", username: "Jamal Burns", email: "jamal@example.com", age: 28, phone: "+1 987 654", status: "Active", role: "FullStack", img: "https://images.pexels.com/photos/2269872/pexels-photo-2269872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
+    { id: "1768327", username: "Sarah Jenkins", email: "sarah@example.com", age: 25, phone: "+1 444 222", status: "Pending", role: "FullStack", img: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" },
   ];
 
   useEffect(() => {
